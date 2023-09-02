@@ -14,8 +14,10 @@ const get = async (req, res) => {
 
 const authenticate = async (req, res) => {
     try {
+        console.log('con')
         const cert = req.socket.getPeerCertificate();
-        const response = await authService.authenticate(cert);
+        console.log(req.client.authorized)
+        const response = await authService.authenticate(req.client.authorized,cert);
         return res.send(response);
     } catch (error) {
         console.log(error);
