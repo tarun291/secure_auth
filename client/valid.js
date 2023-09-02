@@ -10,7 +10,7 @@ const process = async () => {
         const res = await axios.get(serverUrl, opts)
         console.log(res.data);
     } catch (err) {
-        console.error(err.response.data);
+        console.error(err);
     }
 }
 

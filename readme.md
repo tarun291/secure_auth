@@ -7,7 +7,7 @@ First install required dependencies with `npm install`. Then the demo works as f
 We start a sever that by default only accepts requests authenticated by client certificates
 
 ```
-npm run server
+npm start
 ```
  
 
@@ -16,9 +16,8 @@ npm run server
 **Alice** has a valid certificate issued by server, so she can talk to the server:
 
 ```
-$ npm run valid-client
 
-> node ./client/valid-app.js
+node ./client/valid.js
 
 Hello Alice, your certificate was issued by localhost!
 ```
@@ -28,9 +27,8 @@ Hello Alice, your certificate was issued by localhost!
 **Bob** has a self-issued certificate, which is rejected by the server:
 
 ```
-$ npm run invalid-client
 
-> node ./client/invalid-app.js
+node ./client/invalid.js
 
 Sorry Bob, certificates from Bob are not welcome here.
 ```
